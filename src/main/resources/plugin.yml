@@ -1,0 +1,4 @@
+name: HatCommand
+version: '${version}'
+main: me.stokmenn.hatcommand.HatCommand
+api-version: '1.21'
