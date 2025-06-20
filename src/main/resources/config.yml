@@ -1,0 +1,15 @@
+# Join our discord - https://discord.gg/YGzA4UxzFB you can find another good plugins there.
+# Permissions
+# "hat.use" - permission required to use "/spit" command
+# "hat.reload" - permission required to use "/spit reload" command
+
+# cooldown in milliseconds for "/hat" command
+cooldown: 5000
+
+# if enabled: true, "/hat" will work only with permitted materials
+materialsEnabled: false
+# materials that can be used in "/hat" command
+materials:
+    - GLASS
+    - STONE
+    - IRON_BLOCK

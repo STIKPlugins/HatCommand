@@ -1,0 +1,12 @@
+notPlayer: "<red>✘ <white>Only players can use this command!"
+noPermission: "<red>✘ <white>You don't have permission!"
+noItem: "<red>✘ <white>You're not holding any item!"
+needOneItem: "<red>✘ <white>You must hold exactly 1 item!"
+wrongMaterial: "<red>✘ <white>You can't use this material!"
+
+# %cooldown% will be replaced with actual cooldown
+cooldown: "<red>✘ <white>You must wait %cooldown%s before using this command again!"
+successful: "<green>✔ <white>You placed the item on your head!"
+
+noPermissionToReload: "<red>✘ <white>You don't have permission!"
+configReloaded: "<green>✔ <white>Config reloaded!"

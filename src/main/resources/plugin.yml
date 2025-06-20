@@ -1,4 +1,8 @@
 name: HatCommand
-version: '${version}'
+version: '1.0'
 main: me.stokmenn.hatcommand.HatCommand
 api-version: '1.21'
+folia-supported: true
+commands:
+  hat:
+  hatreload:
