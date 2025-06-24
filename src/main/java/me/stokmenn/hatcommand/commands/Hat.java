@@ -51,17 +51,14 @@ public class Hat implements CommandExecutor {
             return false;
         }
         long currentTime = System.currentTimeMillis();
-        UUID uuid = player.getUniqueId();
+        long lastUsed = cooldowns.getOrDefault(player.getUniqueId(), 0L);
 
-        if (cooldowns.containsKey(uuid)) {
-            long lastUsed = cooldowns.get(player.getUniqueId());
-            if (currentTime - lastUsed < Config.cooldown) {
-                double secondsLeft = Math.max((Config.cooldown - (currentTime - lastUsed)) / 1000.0, 0.1);
-                String formatted = String.format("%.1f", secondsLeft);
+        if (currentTime - lastUsed < Config.cooldown) {
+            double remaining = Math.max((Config.cooldown - (currentTime - lastUsed)) / 1000.0, 0.1);
+            String formatted = String.format("%.1f", remaining);
 
-                player.sendMessage(messages.get("cooldown", Map.of("%cooldown%", formatted)));
-                return true;
-            }
+            player.sendMessage(messages.get("cooldown", Map.of("%cooldown%", formatted)));
+            return true;
         }
 
         ItemStack helmet = player.getInventory().getHelmet();
@@ -70,7 +67,7 @@ public class Hat implements CommandExecutor {
         player.getInventory().setItemInMainHand(helmet);
 
         player.sendMessage(messages.get("successful"));
-        cooldowns.put(uuid, currentTime);
+        cooldowns.put(player.getUniqueId(), currentTime);
         return true;
     }
 
